@@ -1,0 +1,145 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{beamerthemeCSU}
+  [2011/01/11 v0.01 LaTeX package for my own purpose]
+\usepackage{pgfkeys}
+\usepackage{titletoc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+%七号 5.25pt 1.845mm
+%六号 7.875pt 2.768mm
+%小五号 9pt 3.163mm
+%五号 10.5pt 3.69mm
+%小四号 12pt 4.2175mm
+%四号 13.75pt 4.83mm
+%三号 15.75pt 5.53mm
+%二号 21pt 7.38mm
+%一号 27.5pt 9.48mm
+%小初号 36pt 12.65mm
+%初号 42pt 14.76mm
+% \renewcommand{\familydefault}{\rmdefault}
+\newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}
+\newcommand{\xiaochuhao}{\fontsize{36pt}{\baselineskip}\selectfont}
+\newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont}
+\newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}
+\newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}
+\newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont}
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}
+\newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}
+\newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}
+\newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}
+
+% \newcommand{\songti}{\selectfont}
+% \newcommand{\heiti}{\selectfont}
+\newcommand{\timesnewroman}{{\baselineskip}\selectfont}
+
+\usepackage[dvipdfm]{geometry}
+% 定义转换成pdf文档的纸张大小，应与\paperwidth \paperheight一致
+%\special{pdf: pagesize width 2
+%\special{pdf: pagesize width 20cm height 30cm}
+% true的含义是保持尺寸不会随一些参数的变化而变化，具体可见Knuth的TeXbook
+%\paperwidth 20 true cm                  % 纸张宽
+%\paperheight 30 true cm                 % 纸张高
+%------------------------------页面布局----------------------------------
+%\textwidth 10 true cm                   % 正文宽
+%\textheight 20 true cm                  % 正文高
+%\headheight 14pt                       % 页眉高
+%\headsep    16pt                        % 页眉距离
+%\footskip   27pt                        % 页脚距离
+%\marginparsep 10pt                      % 边注区距离
+%\marginparwidth 100pt                  % 边注区宽
+
+ %There is absolutely no warranty for this demo package
+ % https://tex.stackexchange.com/questions/209993/how-to-add-a-flyleaf-code/210280#210280
+
+% Custom the title page
+\newcommand*{\titleen}[1]{\gdef\@titleen{#1}}
+\newcommand*{\titlecn}[1]{\gdef\@titlecn{#1}}
+\newcommand*{\priormajor}[1]{\gdef\@priormajor{#1}}
+\newcommand*{\minormajor}[1]{\gdef\@minormajor{#1}}
+\newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}}
+\pgfkeys{/thesisdate/pgf/.cd,
+    year/.store in = \year,
+    month/.store in = \month
+}
+\newcommand{\thesisdate}[1] {
+    \pgfkeys{/thesisdate/pgf/.cd,#1}
+    \gdef\@thesisdate{\year{} 年 \month{} 月}
+}
+\renewcommand*{\maketitle} {
+\begin{titlepage}
+{ \centering
+{\xiaoerhao \heiti 博士学位论文 \par}
+\vspace{2cm}
+{\erhao \heiti \@titlecn \par}
+{\xiaoerhao \@titleen \par}
+\vspace{2cm}
+{\sanhao \songti 学科专业 \@priormajor \par}
+{\sanhao \songti 学科方向 \@minormajor \par}
+\vspace{2cm}
+{\sanhao \songti 作者姓名 \@author \par}
+\vspace{0.5cm}
+{\sanhao \songti 指导教师 \@supervisor \par}
+\vfill
+{\sanhao \songti 中南大学 \par}
+{\xiaosanhao \songti \@thesisdate \par}
+}
+\end{titlepage}
+}
+
+% custom the Chinese abstract
+\newcommand*{\keywordscn}[1]{\gdef\@keywordscn{#1}}
+\newcommand*{\categorycn}[1]{\gdef\@categorycn{#1}}
+\newenvironment{abstractcn} {
+{\sanhao \heiti \centering \@titlecn \par}
+\vspace{2cm}
+\noindent {\sihao \heiti 摘要}:\sihao\songti\noindent
+} {
+\vspace{1cm}
+\noindent {\sihao \heiti 关键词}: {\sihao \songti \@keywordscn} \par
+\noindent {\sihao \heiti 分类号}: {\sihao \songti \@categorycn} \par
+}
+
+% custom the English abstract
+\newcommand*{\keywordsen}[1]{\gdef\@keywordsen{#1}}
+\newcommand*{\categoryen}[1]{\gdef\@categoryen{#1}}
+\newenvironment{abstracten} {
+{\sanhao \centering \@titleen \par}
+\vspace{2cm}
+\noindent {\sihao \textbf{Abstract}}:\sihao\noindent
+} 
+{\normalfont
+\par
+\vspace{1cm} 
+\noindent {\sihao \textbf{Keywords}}: {\sihao \@keywordsen} \par
+\noindent {\sihao \textbf{Classification}}: {\sihao \@categoryen} \par
+}
+
+% 
+\newcommand{\announcement}[1]{
+    {\centering \erhao \heiti 学位论文原创性声明 \par}
+    \vspace{0.5cm}
+    {\sihao 本人郑重声明，所呈交的学位论文是本人在指导教师指导下进行的研究工作及取得的研究成果。尽我所知，除了论文中特别加以标注和致谢的地方外，论文中不包含其他人已经发表或撰写过的研究成果，也不包含为获得中南大学或其他教育机构的学位或证书而使用过的材料。与我共同工作的同志对本研究所作的贡献均已在论文中作了明确的说明。\par
+    申请学位论文与资料若有不实之处，本人承担一切相关责任。\par
+    \vspace{0.5cm}
+    作者签名：\rule[-2pt]{2.0cm}{0.5pt} \ 日期：\rule[-2pt]{1.0cm}{0.5pt}年\rule[-2pt]{1.0cm}{0.5pt}月   \rule[-2pt]{1.0cm}{0.5pt}日 \par
+    }
+    \vspace{2cm}
+    {\centering \erhao \heiti 学位论文版权使用授权书 \par}
+    \vspace{0.5cm}
+    {\sihao 本学位论文作者和指导教师完全了解中南大学有关保留、使用学位论文的规定：即学校有权保留并向国家有关部门或机构送交学位论文的复印件和电子版；本人允许本学位论文被查阅和借阅；学校可以将本学位论文的全部或部分内容编入有关数据库进行检索，可以采用复印、缩印或其它手段保存和汇编本学位论文。\par
+    保密论文待解密后适应本声明。\par
+    \vspace{0.5cm}
+    \begin{tabular}{ll} 
+      作者签名：\rule[-2pt]{2.0cm}{0.5pt} & 指导教师签名:\rule[-2pt]{2.0cm}{0.5pt} \\
+      日期：\rule[-2pt]{1.0cm}{0.5pt}年\rule[-2pt]{1.0cm}{0.5pt}月\rule[-2pt]{1.0cm}{0.5pt}日 & 日期：\rule[-2pt]{1.0cm}{0.5pt}年\rule[-2pt]{1.0cm}{0.5pt}月\rule[-2pt]{1.0cm}{0.5pt}日 \\
+    \end{tabular}
+    
+    }
+}
+
+
+       
+\endinput
