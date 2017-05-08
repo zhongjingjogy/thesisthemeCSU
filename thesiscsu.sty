@@ -4,6 +4,7 @@
 \usepackage{pgfkeys}
 \usepackage{titletoc}
 \usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
 \usepackage{times}
 %七号 5.25pt 1.845mm
 %六号 7.875pt 2.768mm
@@ -23,17 +24,13 @@
 \newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}
 \newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}
 \newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}
-\newcommand{\xiaosanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosanhao}{\fontsize{15pt}{\baselineskip}\selectfont}
 \newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}
 \newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont}
 \newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}
 \newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}
 \newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}
 \newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}
-
-% \newcommand{\songti}{\selectfont}
-% \newcommand{\heiti}{\selectfont}
-\newcommand{\timesnewroman}{{\baselineskip}\selectfont}
 
 \usepackage[dvipdfm]{geometry}
 % 定义转换成pdf文档的纸张大小，应与\paperwidth \paperheight一致
@@ -140,6 +137,16 @@
     }
 }
 
+% page head
+\pagestyle{fancy}
 
-       
+\fancyhf{}
+\fancyhf[ROH,REH]{\small\leftmark}
+\fancyhf[LEH,LOH]{中南大学博士学位论文}
+\fancyhf[CEF,COF]{\thepage}
+% \renewcommand{\sectionmark}[1]{\markright{#1}{}}
+% \renewcommand{\subsectionmark}[1]{\markright{\thesubsection}{}}
+% \fancyhead[RO,R]{\rightmark}
+% \fancyfoot[CO,C] {\thepage}
+
 \endinput
