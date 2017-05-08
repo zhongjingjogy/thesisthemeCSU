@@ -5,7 +5,11 @@
 \usepackage{titletoc}
 \usepackage[T1]{fontenc}
 \usepackage{fancyhdr}
+\usepackage{titlesec}
 \usepackage{times}
+\usepackage[hyphens]{url}
+% https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style
+\bibliographystyle{gbt7714-2005}
 %七号 5.25pt 1.845mm
 %六号 7.875pt 2.768mm
 %小五号 9pt 3.163mm
@@ -137,16 +141,21 @@
     }
 }
 
-% page head
+% page header and footer
 \pagestyle{fancy}
 
 \fancyhf{}
 \fancyhf[ROH,REH]{\small\leftmark}
 \fancyhf[LEH,LOH]{中南大学博士学位论文}
 \fancyhf[CEF,COF]{\thepage}
-% \renewcommand{\sectionmark}[1]{\markright{#1}{}}
-% \renewcommand{\subsectionmark}[1]{\markright{\thesubsection}{}}
-% \fancyhead[RO,R]{\rightmark}
-% \fancyfoot[CO,C] {\thepage}
+
+\titleformat{\section}
+  {\sihao\heiti\scshape}{\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\xiaosihao\heiti\scshape}{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+  {\xiaosihao\songti\scshape}{\thesubsubsection}{1em}{}
 
 \endinput
