@@ -48,7 +48,7 @@ A theme for the thesis of Central South University
     \end{document}
 
 1.2 中文/英文摘要
-````````````````````````
+````````````````````
 请先定义关键词和分类号，在插入中文摘要环境
 ::
     \keywordscn{关键词1,关键词2,关键词3}
@@ -63,15 +63,16 @@ A theme for the thesis of Central South University
     \end{abstracten}
 
 1.3 标题样式
-
+````````````````````
 - 一级标题
 - 二级标题
 - 三级标题
 - 四级标题（未定制，不建议采用过多分级）
 
 2. 字体
-
+------------
 2.1 字号
+````````````````````
 字体大小根据pt来定制。
 ::
     \newcommand{\chuhao}{\fontsize{42.15749pt}{\baselineskip}\selectfont}
@@ -92,5 +93,27 @@ A theme for the thesis of Central South University
     \newcommand{\bahao}{\fontsize{5.01874pt}{\baselineskip}\selectfont}
 
 3. TODO
-
+------------
 - 定制各种封面
+
+4. 常用的Latex技巧
+------------------
+4.1 在图片上添加注释
+````````````````````
+方法很多，这里给的是使用overpic这个库。
+::
+
+
+5. 常见问题
+------------
+5.1 刷新字体
+`````````````````
+如果字体显示 不正常，或许需要刷新一下。
+::
+    fc-cache -fv
+
+6. 参考
+-------
+
+[1] https://github.com/latexstudio/CUMCMThesis
+[2] http://www.chinatex.org
