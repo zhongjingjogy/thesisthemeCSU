@@ -117,3 +117,4 @@ A theme for the thesis of Central South University
 
 [1] https://github.com/latexstudio/CUMCMThesis
 [2] http://www.chinatex.org
+[3] http://www.ctex.org/PackageCTeX/files.xml?action=download&file=ctex.pdf
