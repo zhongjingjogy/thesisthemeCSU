@@ -30,8 +30,8 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \RequirePackage{xcolor}
 % 设置页眉和页脚
 \RequirePackage{fancyhdr}
-% % 设置标题格式
-% \RequirePackage{titlesec}
+% 设置标题格式
+\RequirePackage{titlesec}
 % 超链接 hyperref 的设置
 \RequirePackage{hyperref}
 % 插入图片
@@ -44,20 +44,20 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \RequirePackage{booktabs}
 %% multirow 支持在表格中跨行
 \RequirePackage{multirow}
-% %% 调整间隔, 让表格更好看些
-% \RequirePackage{bigstrut}
-% %% 在跨行表格中输入定界符
-% \RequirePackage{bigdelim}
+% 调整间隔, 让表格更好看些
+\RequirePackage{bigstrut}
+%在跨行表格中输入定界符
+\RequirePackage{bigdelim}
 % 保护脆落命令
 \RequirePackage{cprotect}
-% % 设置代码环境
-% \RequirePackage{listings}
-% % 首行缩进
-% \RequirePackage{indentfirst}
-% % 设置浮动体的标题
-% \RequirePackage{caption}
-% % 定制列表环境
-% \RequirePackage{enumitem}
+% 设置代码环境
+\RequirePackage{listings}
+% 首行缩进
+\RequirePackage{indentfirst}
+% 设置浮动体的标题
+\RequirePackage{caption}
+% 定制列表环境
+\RequirePackage{enumitem}
 % % 下划线 
 % \RequirePackage{ulem}
 % % 尺寸计算
@@ -78,54 +78,127 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 % 每行缩进两个汉字
 \setlength\parindent{2em}
 % 修改tabular 环境, 设置表格中的行间距为正文行间距.
-% \let\mcm@oldtabular\tabular
-% \let\mcm@endoldtabular\endtabular
-% \renewenvironment{tabular}%
-% 	{\bgroup%
-% 	\renewcommand{\arraystretch}{1.38}%
-% 	\mcm@oldtabular}%
-% 	{\mcm@endoldtabular\egroup}
+\let\csu@oldtabular\tabular
+\let\csu@endoldtabular\endtabular
+\renewenvironment{tabular}%
+	{\bgroup%
+	\renewcommand{\arraystretch}{1.38}%
+	\csu@oldtabular}%
+	{\csu@endoldtabular\egroup}
 
-% % 数学环境, 定理等设置
-% \newtheorem{definition}{\mcm@cap@definition}
-% \newtheorem{theorem}{\mcm@cap@theorem}
-% \newtheorem{lemma}{\mcm@cap@lemma}
-% \newtheorem{corollary}{\mcm@cap@corollary}
-% \newtheorem{assumption}{\mcm@cap@assumption}
-% \newtheorem{conjecture}{\mcm@cap@conjecture}
-% \newtheorem{axiom}{\mcm@cap@axiom}
-% \newtheorem{principle}{\mcm@cap@principle}
-% \newtheorem{problem}{\mcm@cap@problem}
-% \newtheorem{example}{\mcm@cap@example}
-% \newtheorem{proof}{\mcm@cap@proof}
-% \newtheorem{solution}{\mcm@cap@solution}
+% 数学环境, 定理等设置
+\newtheorem{definition}{\csu@cap@definition}
+\newtheorem{theorem}{\csu@cap@theorem}
+\newtheorem{lemma}{\csu@cap@lemma}
+\newtheorem{corollary}{\csu@cap@corollary}
+\newtheorem{assumption}{\csu@cap@assumption}
+\newtheorem{conjecture}{\csu@cap@conjecture}
+\newtheorem{axiom}{\csu@cap@axiom}
+\newtheorem{principle}{\csu@cap@principle}
+\newtheorem{problem}{\csu@cap@problem}
+\newtheorem{example}{\csu@cap@example}
+\newtheorem{proof}{\csu@cap@proof}
+\newtheorem{solution}{\csu@cap@solution}
 
-% % 数学定理相关的常量
-% \newcommand*{\mcm@cap@definition}{定义}
-% \newcommand*{\mcm@cap@theorem}{定理}
-% \newcommand*{\mcm@cap@lemma}{引理}
-% \newcommand*{\mcm@cap@corollary}{推论}
-% \newcommand*{\mcm@cap@assumption}{假设}
-% \newcommand*{\mcm@cap@conjecture}{猜想}
-% \newcommand*{\mcm@cap@axiom}{公理}
-% \newcommand*{\mcm@cap@principle}{定律}
-% \newcommand*{\mcm@cap@problem}{问题}
-% \newcommand*{\mcm@cap@example}{例}
-% \newcommand*{\mcm@cap@proof}{证明}
-% \newcommand*{\mcm@cap@solution}{解}
-% %  中文标题名称
-% \newcommand*{\mcm@cap@contentsname}{目录}
-% \newcommand*{\mcm@cap@listfigurename}{插图清单}
-% \newcommand*{\mcm@cap@listtablename}{附表清单}
-% \newcommand*{\mcm@cap@refname}{参考文献}
-% \newcommand*{\mcm@cap@indexname}{索引}
-% \newcommand*{\mcm@cap@figurename}{图}
-% \newcommand*{\mcm@cap@tablename}{表}
-% \newcommand*{\mcm@cap@appendixname}{附录}
-% \newcommand*{\mcm@cap@abstractname}{摘要}
-%  %%%  中文关键字
-% \newcommand*{\mcm@cap@keywordsname}{关键字}
+% 数学定理相关的常量
+\newcommand*{\csu@cap@definition}{定义}
+\newcommand*{\csu@cap@theorem}{定理}
+\newcommand*{\csu@cap@lemma}{引理}
+\newcommand*{\csu@cap@corollary}{推论}
+\newcommand*{\csu@cap@assumption}{假设}
+\newcommand*{\csu@cap@conjecture}{猜想}
+\newcommand*{\csu@cap@axiom}{公理}
+\newcommand*{\csu@cap@principle}{定律}
+\newcommand*{\csu@cap@problem}{问题}
+\newcommand*{\csu@cap@example}{例}
+\newcommand*{\csu@cap@proof}{证明}
+\newcommand*{\csu@cap@solution}{解}
+%  中文标题名称
+\newcommand*{\csu@cap@contentsname}{目录}
+\newcommand*{\csu@cap@listfigurename}{插图清单}
+\newcommand*{\csu@cap@listtablename}{附表清单}
+\newcommand*{\csu@cap@refname}{参考文献}
+\newcommand*{\csu@cap@indexname}{索引}
+\newcommand*{\csu@cap@figurename}{图}
+\newcommand*{\csu@cap@tablename}{表}
+\newcommand*{\csu@cap@appendixname}{附录}
+\newcommand*{\csu@cap@abstractname}{摘要}
+ %%%  中文关键字
+\newcommand*{\csu@cap@keywordsname}{关键字}
 
+% 浮动环境设置
+% 默认情况下, \LaTeX{} 要求每页的文字至少占据 20%,否则该页就只单独放置一个浮动环境,
+% 而这通常不是我们想要的, 我们将这个要求降低到 5%.
+ \renewcommand*{\textfraction}{0.05}
+% 有时如果多个浮动环境连续放在一起, \LaTeX{}
+% 会将它们分在几个不同页，即使它们可在同一页放
+% 得下. 我们可以通过修改 |\topfraction| 和 |\bottomfraction| 分别设置顶端和底端的浮
+% 动环境的最大比例.
+ \renewcommand*{\topfraction}{0.9}
+ \renewcommand*{\bottomfraction}{0.8}
+% 有时\LaTeX{}会把一个浮动环境单独放在一页,
+% 我们要求这个环境至少要占据 85% 才能单独放在一页.
+% 注意:  |\floatpagefraction| 的数值必须小于 |\topfraction|.
+ \renewcommand*{\floatpagefraction}{0.85}
+% 关于图片 graphicx
+ % 如果图片没有指定后缀, 依次按下列顺序搜索
+\DeclareGraphicsExtensions{.pdf,.eps,.jpg,.png}
+ % 设置图表搜索路径, 可以给图表文件夹取如下名字
+\graphicspath{{figures/}{figure/}{pictures/}%
+  {picture/}{pic/}{pics/}{image/}{images/}}
+% 图表标题
+\DeclareCaptionFont{song}{\songti}
+\DeclareCaptionFont{minusfour}{\zihao{-4}}
+\captionsetup[figure]{%
+	format=hang,   % 标题从第二行开始都有缩进, 应该和 justification=raggedright 的效果一样.
+	labelsep=quad, % 分隔符是一个空格
+	font={song,minusfour,bf}, % 图的字体, 宋体小四
+	position=bottom % position=bottom, 不代表标题放在下面, 标题仍放在你放\caption的位置.
+}
+\captionsetup[table]{%
+	format=hang,   % 标题从第二行开始都有缩进, 应该和 justification=raggedright 的效果一样.
+	labelsep=quad, % 分隔符是一个空格
+	font={song,minusfour,bf}, % 表的字体, 宋体小四
+	position=top % position=bottom, 不代表标题放在下面, 标题仍放在你放\caption的位置.
+}
+% 列表环境设置
+\setlist{%
+	topsep=0.3em, % 列表顶端的垂直空白
+	partopsep=0pt, % 列表环境前面紧接着一个空白行时其顶端的额外垂直空白
+	itemsep=0ex plus 0.1ex, % 列表项之间的额外垂直空白
+	parsep=0pt, % 列表项内的段落之间的垂直空白
+	leftmargin=1.5em, % 环境的左边界和列表之间的水平距离
+	rightmargin=0em, % 环境的右边界和列表之间的水平距离
+	labelsep=0.5em, % 包含标签的盒子与列表项的第一行文本之间的间隔
+	labelwidth=2em % 包含标签的盒子的正常宽度；若实际宽度更宽，则使用实际宽度。
+}
+
+% 中文标题格式设置
+% 目录深度
+\setcounter{secnumdepth}{3}
+\titleformat{\section}{\centering\zihao{4}\heiti}{第\,\thesection\,章}{1em}{}
+\titleformat{\subsection}{\zihao{-4}\heiti}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\zihao{-4}\songti}{\thesubsubsection}{1em}{}
+\titlecontents{section}
+              [0.0em]
+              {\zihao{-4} \songti}
+              {第\,\thecontentslabel\,章\hspace{1em}}
+              {}
+              {\hfill\contentspage}
+
+\titlecontents{subsection}
+    [3.6em]
+    {\zihao{-4} \songti} % note that 3.8 = 1.5 + 2.3
+    {\contentslabel{2.2em}}
+    {\hspace*{-3.2em}}
+    {\titlerule*[1pc]{.}\contentspage}
+
+\titlecontents{subsubsection}
+    [5.8em]
+    {\zihao{-4} \songti} % note that 3.8 = 1.5 + 2.3
+    {\contentslabel{3.0em}}
+    {\hspace*{-3.2em}}
+    {\titlerule*[1pc]{.}\contentspage}
 % 定制titlepage
 % 定义命令和定义相应的宏。
 % 以titleen为例，\titleen为实际在源码中使用的命令，一旦执行就会因为\gdef\@titleen{#1}使得其产生一个\@titleen的宏。
