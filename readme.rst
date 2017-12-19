@@ -128,5 +128,7 @@ Tex是一种非常优秀的排版语言，通过编写Tex源代码，然后使�
 6. 参考
 -------
 
-[1] https://github.com/latexstudio/CUMCMThesis
-[2] http://www.chinatex.org
+- [1] https://github.com/latexstudio/CUMCMThesis
+- [2] http://www.chinatex.org
+- [3] http://www.ctex.org/PackageCTeX/files.xml?action=download&file=ctex.pdf
+- [4] http://www.ctex.org/documents/packages/layout/titlesec.pdf
