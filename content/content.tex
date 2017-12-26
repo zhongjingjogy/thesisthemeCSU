@@ -1,0 +1,88 @@
+% 论文正文是主体，主体部分应从另页右页开始，每一章应另起页。一般由序号标题、文字叙述、图、表格和公式等五个部分构成。
+
+\section{绪论} % 1.
+\subsection{题名} % 1.1
+\lipsum
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[width=7cm]{figures/csu.png}
+        \bicaption{图}{中南大学校徽}{Fig}{Logo of Central South University}
+        \label{fig:logo-csu}
+    \end{center}
+\end{figure}
+
+\subsubsection{题名} % 1.1.1
+\lipsum
+\subsubsection{题名} % 1.1.2
+\lipsum
+\newpage
+
+\section{题名}
+\lipsum
+\subsection{题名}
+\subsubsection{题名}
+\lipsum
+\subsubsection{题名}
+\lipsum
+\subsection{题名}
+\subsubsection{题名}
+\lipsum
+\subsubsection{题名}
+\lipsum
+\subsection{题名}
+\subsubsection{题名}
+\lipsum
+\subsubsection{题名}
+\lipsum
+\newpage
+
+\section{题名}
+\subsection{题名}
+\subsubsection{题名}
+\lipsum
+\subsubsection{题名}
+\lipsum
+\subsection{题名}
+\subsubsection{题名}
+\lipsum
+\subsubsection{题名}
+\lipsum
+\subsection{题名}
+\subsubsection{题名}
+\lipsum
+\subsubsection{题名}
+\lipsum
+\newpage
+
+\section{结论}
+\lipsum
+\newpage
+
+% 以下为设置无编号章节标题 %
+% -------------------------------------------------------%
+% https://www.zhihu.com/question/29413517/answer/44358389 %
+% 说明如下：
+% secnumdepth 这个计数器是 LaTeX 标准文档类用来控制章节编号深度的。在 article 中，这个计数器的值默认是 3，对应的章节命令是 \subsubsection。也就是说，默认情况下，article 将会对 \subsubsection 及其之上的所有章节标题进行编号，也就是 \part, \section, \subsection, \subsubsection。LaTeX 标准文档类中，最大的标题是 \part。它在 book 和 report 类中的层级是「-1」，在 article 类中的层级是「0」。这里，我们在调用 \appendix 的时候将计数器设置为 -2，因此所有的章节命令都不会编号了。不过，一般还是会保留 \part 的编号的。所以在实际使用中，将它设置为 0 就可以了。
+
+% 作者：知乎用户
+% 链接：https://www.zhihu.com/question/29413517/answer/44391211
+% 来源：知乎
+% 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+% 在修改过程中请注意不要破环命令的完整性
+
+\renewcommand\appendix{\setcounter{secnumdepth}{-2}}
+\appendix
+% 参考文献列表
+\section{参考文献}
+\nocite{*} % 此处用于列出所有参考文献
+\bibliography{ref} % 参考文献源
+\newpage
+
+\section{攻读学位期间主要研究成果} % 无章节编号
+\lipsum
+\newpage
+
+\section{致谢} % 无章节编号
+\lipsum
+\newpage
